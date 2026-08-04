@@ -7,9 +7,9 @@
  <style>
 body{
     font-family:Arial;
-    width:98%;
-    margin:10px auto;
-    padding:15px;
+    max-width:1200px;
+    margin:20px auto;
+    padding:20px;
 }
  
  input, select{
@@ -218,24 +218,27 @@ async function loadCustomerMaster() {
 
 }
  
- async function loadData(){
- 
- const querySnapshot=await getDocs(collection(db,"sales"));
- 
- allData=[];
- 
- querySnapshot.forEach(document=>{
- 
- allData.push({
- id: document.id,
- ...document.data()
- });
- });
- 
- display(allData);
- 
- }
- 
+async function loadData(){
+
+    const querySnapshot = await getDocs(collection(db, "sales"));
+
+    allData = [];
+
+    querySnapshot.forEach(document => {
+
+        allData.push({
+            id: document.id,
+            ...document.data()
+        });
+
+    });
+
+    // Sort by date (Ascending)
+    allData.sort((a, b) => new Date(a.date) - new Date(b.date));
+
+    display(allData);
+
+} 
 function display(data){
 
     let html = "";
