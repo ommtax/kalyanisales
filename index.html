@@ -5,12 +5,12 @@
  <title>Sales Entry</title>
  
  <style>
- body{
- font-family:Arial;
- max-width:1200px;
- margin:20px auto;
- padding:20px;
- }
+body{
+    font-family:Arial;
+    width:98%;
+    margin:10px auto;
+    padding:15px;
+}
  
  input, select{
     width:100%;
@@ -185,7 +185,7 @@ deleteDoc
  document.getElementById("name").value="";
  document.getElementById("date").value="";
  document.getElementById("payment").value="";
- 
+ document.getElementById("transType").value = "";
  loadData();
  
  }
