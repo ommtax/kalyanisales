@@ -115,29 +115,7 @@ body{
 
 
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
-import { 
-  getAuth,
-  onAuthStateChanged
-} from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyAm6CC_CzcPJcmZR-xWY4BCEX8x-8huNCk",
-  authDomain: "kalyanipayment.firebaseapp.com",
-  projectId: "kalyanipayment",
-  storageBucket: "kalyanipayment.firebasestorage.app",
-  messagingSenderId: "213128906986",
-  appId: "1:213128906986:web:0fda719c859e94684fef93"
-};
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-
-onAuthStateChanged(auth, (user) => {
-    if (!user) {
-        window.location.replace("https://ommtax.github.io/kalyanilogin/");
-    }
-});
 
 
 
